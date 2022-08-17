@@ -36,7 +36,7 @@ function endsWith($haystack, $needle)
             <span></span>
         </div>
         <?php
-        $dir = '';
+        $dir = '/home/runner/video-player/videos/';
         $files1 = scandir($dir);
         $arrayLength = count($files1);
         $i = 0;
@@ -61,7 +61,7 @@ function endsWith($haystack, $needle)
         while ($i < $arrayLength) {
             if (startsWith($files1[$i], "SAISON")) {
                 $id = $files1[$i];
-                ${"dir$i"} = '' . $files1[$i];
+                ${"dir$i"} = '/home/runner/video-player/videos/' . $files1[$i];
                 ${"files$i"} = scandir(${"dir$i"});
                 $arrayLength2 = count(${"files$i"});
                 $j = 0;
