@@ -87,7 +87,7 @@ function endsWith($haystack, $needle)
         </div>
         <div class="image">
             <img id="play_button" src="img/play_button.png" alt="play_button">
-            <img id="play-img" src="img/bg.png" alt="play">
+            <img id="play-img" src="img/bg.jpg" alt="play">
             <video id="player" playsinline controls></video>
         </div>
 
