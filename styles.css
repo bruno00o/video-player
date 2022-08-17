@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+body {
+    background-color: #071026;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    transition: 1s ease;
+}
+
+@keyframes slowOnset {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+section {
+    background-color: #0B338F;
+    border-radius: 10px;
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* transition: .5s ease; */
+    animation: .5s ease-in 0s 1 slowOnset;
+}
+
+.title {
+    margin-top: 1.3em;
+    margin-left: 2.5em;
+}
+
+.title h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0cm;
+}
+
+.title h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: .2em;
+}
+
+video {
+    display: none;
+    width: 720px;
+}
+
+/* video:-webkit-full-screen {
+    transform: none;
+} */
+
+#play-img {
+    filter: blur(1px);
+    width: 720px;
+    cursor: pointer;
+}
+
+#play_button {
+    position: absolute;
+    width: 140px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+#play_button:hover {
+    transform: scale(1.03);
+    transition: .1s ease-in-out;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+#next_button {
+    position: absolute;
+    width: 40px;
+    top: 1.5em;
+    right: 2.5em;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#side-bar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: 550px;
+    background-color: #0B338F;
+    left: -550px;
+    transition: .5s ease-out;
+    z-index: 10;
+    max-height: 100%;
+}
+
+.toggle-button {
+    position: relative;
+    top: 30px;
+    left: 580px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    animation: .5s ease-in 0s 1 slowOnset;
+}
+
+.toggle-button:hover {
+    transform: scale(1.05);
+}
+
+.toggle-button span {
+    width: 50px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: white;
+    display: block;
+    margin-top: 7px;
+    transition: .5s ease;
+}
+
+#side-bar.active {
+    left: 0;
+}
+
+#side-bar.active .toggle-button {
+    top: 40px;
+    left: 580px;
+}
+
+#side-bar.active span {
+    position: absolute;
+}
+
+#side-bar.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+#side-bar.active span:nth-child(2) {
+    transition: none;
+    opacity: 0%;
+}
+
+#side-bar.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#side-bar.active~#main {
+    transition: .5s ease-out;
+    background-color: #071026;
+    opacity: 50%;
+    z-index: 6;
+}
+
+ul {
+    margin: 1em 2em 5% 2em;
+    padding: 0;
+    list-style-type: none;
+    overflow-y: auto;
+    height: auto;
+    height: 80%;
+    padding-right: 1em;
+    padding: 1em;
+    background: #09286e;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #09286e;
+}
+
+ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 20%);
+    border-radius: 20px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: rgba(7, 16, 38, 70%);
+    border-radius: 20px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: rgba(7, 16, 38, 90%);
+}
+
+#side-bar li {
+    margin-bottom: 1em;
+    cursor: pointer;
+    opacity: 100%;
+    color: #84a3e6;
+    /* text-indent: -4em;
+    padding-left: 4em;
+    text-align: left; */
+}
+
+#side-bar li:hover {
+    opacity: 100%;
+    color: white;
+}
+
+#info {
+    position: absolute;
+    width: 35px;
+    bottom: 2em;
+    left: 2em;
+}
+
+#news {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    bottom: 0;
+    opacity: 70%;
+    border-radius: 10px;
+}
+
+/* DROPDOWN MENU */
+
+.container {
+    margin-top: 0;
+    padding: 32px;
+    margin-bottom: 0;
+}
+
+.select-box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.select-box .options-container {
+    background: #09286e;
+    color: #f5f6fa;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+}
+
+.selected {
+    background: #09286e;
+    border-radius: 8px;
+    margin-bottom: 3px;
+    color: #f5f6fa;
+    position: relative;
+    order: 0;
+}
+
+.selected::after {
+    content: "";
+    background: url("img/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+    transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .options-container.active+.selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(0, 0, 0, 20%);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+    background: rgba(7, 16, 38, 70%);
+    border-radius: 0 8px 8px 0;
+}
+
+.select-box .option, .selected {
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    background: #0f214b;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+#welcome {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #071026;
+    opacity: 85%;
+    color: white;
+    z-index: 15;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+#main {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+#littleAl {
+    position: absolute;
+    right: 2em;
+    top: 1em;
+    width: 130px;
+    transform: rotate(20deg);
+    cursor: pointer;
+    z-index: 1;
+    animation: .5s ease-in 0s 1 slowOnset;
+}
+
+#littleAl:hover {
+    transform: rotate(25deg);
+}
+
+form {
+    margin-left: 2em;
+}
+
+@media screen and (max-width: 680px) {
+    section {
+        width: 95%;
+        background-color: transparent;
+        top: 45%;
+    }
+    .title {
+        margin: 0;
+        margin-top: 2em;
+        background-color: #0B338F;
+        padding: .2em 1em;
+        margin-bottom: 1em;
+        border-radius: 10px;
+    }
+    .title h1 {
+        font-size: 1.1rem;
+    }
+    .title h2 {
+        font-size: 1rem;
+        margin-bottom: 1em;
+    }
+    .image {
+        background-color: #0B338F;
+        padding: 1em;
+        margin-bottom: 2em;
+        border-radius: 10px;
+    }
+    video {
+        width: 100%;
+    }
+    #play-img {
+        width: 100%;
+    }
+    #play_button {
+        width: 70px;
+    }
+    #side-bar {
+        width: 100%;
+        left: -100%;
+    }
+    .toggle-button {
+        position: absolute;
+        top: 15px;
+        left: 105%;
+        height: 20px;
+        width: 20px;
+    }
+    .toggle-button span {
+        width: 30px;
+        height: 4px;
+        border-radius: .5px;
+        margin-top: 4px;
+    }
+    #side-bar.active .toggle-button {
+        top: 30px;
+        left: 85%;
+    }
+    #littleAl {
+        width: 80px;
+        top: auto;
+        bottom: 1em;
+        right: 1em;
+    }
+    ul {
+        margin-top: 0;
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+    #next_button {
+        display: none;
+    }
+    /* DROPDOWN MENU */
+    .select-box {
+        width: 50%;
+    }
+}
+
+@media screen and (max-height:500px) {
+    section {
+        width: 60%;
+    }
+    .title {
+        margin-top: 4em;
+        margin-bottom: .5em;
+    }
+    .title h1 {
+        font-size: 1rem;
+    }
+    .title h2 {
+        font-size: .9rem;
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width:830px) and (min-width:680px) {
+    section {
+        width: 660px;
+    }
+    #play-img {
+        width: 600px;
+    }
+    video {
+        width: 600px;
+    }
+}
