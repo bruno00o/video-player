@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 body {
     background-color: #071026;
     font-family: 'Inter', sans-serif;
@@ -13,6 +14,7 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 100%;
     }
@@ -27,7 +29,6 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    /* transition: .5s ease; */
     animation: .5s ease-in 0s 1 slowOnset;
 }
 
@@ -52,10 +53,6 @@ video {
     display: none;
     width: 720px;
 }
-
-/* video:-webkit-full-screen {
-    transform: none;
-} */
 
 #play-img {
     filter: blur(1px);
@@ -198,9 +195,6 @@ ul::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
     opacity: 100%;
     color: #84a3e6;
-    /* text-indent: -4em;
-    padding-left: 4em;
-    text-align: left; */
 }
 
 #side-bar li:hover {
@@ -295,7 +289,8 @@ ul::-webkit-scrollbar-thumb:hover {
     border-radius: 0 8px 8px 0;
 }
 
-.select-box .option, .selected {
+.select-box .option,
+.selected {
     padding: 12px 24px;
     cursor: pointer;
 }
@@ -360,6 +355,7 @@ form {
         background-color: transparent;
         top: 45%;
     }
+
     .title {
         margin: 0;
         margin-top: 2em;
@@ -368,32 +364,40 @@ form {
         margin-bottom: 1em;
         border-radius: 10px;
     }
+
     .title h1 {
         font-size: 1.1rem;
     }
+
     .title h2 {
         font-size: 1rem;
         margin-bottom: 1em;
     }
+
     .image {
         background-color: #0B338F;
         padding: 1em;
         margin-bottom: 2em;
         border-radius: 10px;
     }
+
     video {
         width: 100%;
     }
+
     #play-img {
         width: 100%;
     }
+
     #play_button {
         width: 70px;
     }
+
     #side-bar {
         width: 100%;
         left: -100%;
     }
+
     .toggle-button {
         position: absolute;
         top: 15px;
@@ -401,30 +405,36 @@ form {
         height: 20px;
         width: 20px;
     }
+
     .toggle-button span {
         width: 30px;
         height: 4px;
         border-radius: .5px;
         margin-top: 4px;
     }
+
     #side-bar.active .toggle-button {
         top: 30px;
         left: 85%;
     }
+
     #littleAl {
         width: 80px;
         top: auto;
         bottom: 1em;
         right: 1em;
     }
+
     ul {
         margin-top: 0;
         margin-left: .5em;
         margin-right: .5em;
     }
+
     #next_button {
         display: none;
     }
+
     /* DROPDOWN MENU */
     .select-box {
         width: 50%;
@@ -435,13 +445,16 @@ form {
     section {
         width: 60%;
     }
+
     .title {
         margin-top: 4em;
         margin-bottom: .5em;
     }
+
     .title h1 {
         font-size: 1rem;
     }
+
     .title h2 {
         font-size: .9rem;
         margin-bottom: 1em;
@@ -452,9 +465,11 @@ form {
     section {
         width: 660px;
     }
+
     #play-img {
         width: 600px;
     }
+
     video {
         width: 600px;
     }

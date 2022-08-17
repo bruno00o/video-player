@@ -42,29 +42,29 @@ function endsWith($haystack, $needle)
         $i = 0;
         echo '<div class="container">';
         echo '<div class="select-box">';
-        echo '<div class="options-container">';        
-        while ($i<$arrayLength) {
+        echo '<div class="options-container">';
+        while ($i < $arrayLength) {
             if (startsWith($files1[$i], "SAISON")) {
                 echo '<div class="option">';
-                echo '<input type="radio" class="radio" id="inuput'.$files1[$i].'" name="category" />';
-                echo '<label for="season">'.$files1[$i].'</label>';
+                echo '<input type="radio" class="radio" id="inuput' . $files1[$i] . '" name="category" />';
+                echo '<label for="season">' . $files1[$i] . '</label>';
                 echo '</div>';
             }
             $i++;
         }
-        
+
         echo '</div>';
         echo '<div class="selected">Choix de la Saison</div>';
         echo '</div>';
         echo '</div>';
-        $i=0;
-        while ($i<$arrayLength) {
+        $i = 0;
+        while ($i < $arrayLength) {
             if (startsWith($files1[$i], "SAISON")) {
                 $id = $files1[$i];
                 ${"dir$i"} = '' . $files1[$i];
                 ${"files$i"} = scandir(${"dir$i"});
                 $arrayLength2 = count(${"files$i"});
-                $j=0;
+                $j = 0;
                 echo "<ul id='" . $id . "' style='display: none;'>";
                 while ($j < $arrayLength2) {
                     if (endsWith(${"files$i"}[$j], 'mp4')) {
@@ -83,14 +83,14 @@ function endsWith($haystack, $needle)
         <div class="title">
             <h1>Video Player</h1>
             <h2 id='title'></h2>
-            <img id="next_button" src="next_button.png" alt="next">
+            <img id="next_button" src="img/next_button.png" alt="next">
         </div>
         <div class="image">
-            <img id="play_button" src="play_button.png" alt="play_button">
+            <img id="play_button" src="img/play_button.png" alt="play_button">
             <img id="play-img" src="img/bg.png" alt="play">
             <video id="player" playsinline controls></video>
         </div>
-        
+
     </section>
 
     <!-- <div id="news"></div> -->

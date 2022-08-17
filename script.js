@@ -131,7 +131,7 @@ const ext = '.mp4'
 function change_video(elem) {
     if (typeof elem === "string") {
         var txtvideo = elem;
-        for (let i=0; i<liList.length; i++) {
+        for (let i = 0; i < liList.length; i++) {
             if (liList[i].innerHTML == elem) {
                 var saison = (liList[i].parentElement.id);
             }
