@@ -13,8 +13,6 @@ const section = document.querySelector('section');
 const ulList = document.getElementsByTagName('ul');
 const labelList = document.getElementsByTagName('label');
 
-console.log(liList);
-
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 
